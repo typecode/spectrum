@@ -194,6 +194,7 @@
             alphaWidth = 0,
             alphaSlideHelperWidth = 0,
             slideHelperHeight = 0,
+            slideHelperWidth = 0,
             currentHue = 0,
             currentSaturation = 0,
             currentValue = 0,
@@ -854,9 +855,9 @@
                 });
 
                 // Where to show the bar that displays your current selected hue
-                var slideY = (currentHue) * slideHeight;
+                var slideX = (currentHue) * (slideWidth - slideHelperWidth);
                 slideHelper.css({
-                    "top": (slideY - slideHelperHeight) + "px"
+                    "left": slideX + "px"
                 });
             }
         }
@@ -892,6 +893,7 @@
             slideWidth = slider.width();
             slideHeight = slider.height();
             slideHelperHeight = slideHelper.height();
+            slideHelperWidth = slideHelper.width();
             alphaWidth = alphaSlider.width();
             alphaSlideHelperWidth = alphaSlideHelper.width();
 
