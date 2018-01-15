@@ -90,7 +90,7 @@
         }
 
         return [
-            "<div class='sp-container sp-hidden'>",
+            "<div class='sp-container'>",
                 "<div class='sp-palette-container'>",
                     "<div class='sp-palette sp-thumb sp-cf'></div>",
                     "<div class='sp-palette-button-container sp-cf'>",
@@ -194,6 +194,7 @@
             alphaWidth = 0,
             alphaSlideHelperWidth = 0,
             slideHelperHeight = 0,
+            slideHelperWidth = 0,
             currentHue = 0,
             currentSaturation = 0,
             currentValue = 0,
@@ -631,7 +632,6 @@
             $(doc).on("click.spectrum", clickout);
             $(window).on("resize.spectrum", resize);
             replacer.addClass("sp-active");
-            container.removeClass("sp-hidden");
 
             reflow();
             updateUI();
@@ -677,7 +677,6 @@
             $(window).off("resize.spectrum", resize);
 
             replacer.removeClass("sp-active");
-            container.addClass("sp-hidden");
 
             callbacks.hide(get());
             boundElement.trigger('hide.spectrum', [ get() ]);
@@ -856,9 +855,9 @@
                 });
 
                 // Where to show the bar that displays your current selected hue
-                var slideY = (currentHue) * slideHeight;
+                var slideX = (currentHue) * (slideWidth - slideHelperWidth);
                 slideHelper.css({
-                    "top": (slideY - slideHelperHeight) + "px"
+                    "left": slideX + "px"
                 });
             }
         }
@@ -894,6 +893,7 @@
             slideWidth = slider.width();
             slideHeight = slider.height();
             slideHelperHeight = slideHelper.height();
+            slideHelperWidth = slideHelper.width();
             alphaWidth = alphaSlider.width();
             alphaSlideHelperWidth = alphaSlideHelper.width();
 
