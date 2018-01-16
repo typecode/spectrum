@@ -843,11 +843,11 @@
                 var dragX = s * dragWidth;
                 var dragY = dragHeight - (v * dragHeight);
                 dragX = Math.max(
-                    -dragHelperHeight,
+                    0,
                     Math.min(dragWidth - dragHelperHeight, dragX - dragHelperHeight)
                 );
                 dragY = Math.max(
-                    -dragHelperHeight,
+                    0,
                     Math.min(dragHeight - dragHelperHeight, dragY - dragHelperHeight)
                 );
                 dragHelper.css({
