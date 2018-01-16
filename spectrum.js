@@ -396,7 +396,7 @@
             }, dragStart, dragStop);
 
             draggable(slider, function (dragX, dragY) {
-                currentHue = parseFloat(dragY / slideHeight);
+                currentHue = parseFloat(dragX / slideWidth);
                 isEmpty = false;
                 if (!opts.showAlpha) {
                     currentAlpha = 1;
