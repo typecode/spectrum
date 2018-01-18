@@ -113,9 +113,17 @@
                             "<div class='sp-hue'>",
                                 "<div class='sp-slider'>",
                                     "<svg version='1.1'>",
-                                        "<g transform='translate(-761.000000, -1257.000000)' fill='#E4E3EC'>",
-                                            "<path d='M761,1305 L761,1257 L785,1257 L785,1305 L761,1305 Z M769,1269 L769,1293 L771,1293 L771,1269 L769,1269 Z M775,1269 L775,1293 L777,1293 L777,1269 L775,1269 Z'></path>",
-                                        "</g>",
+                                        '<g id="Updated-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-292.000000, -2575.000000)">',
+                                            '<g id="Color-Picker-Standalone" transform="translate(96.000000, 2551.000000)">',
+                                                '<g id="Group" transform="translate(164.000000, 126.000000) rotate(-90.000000) translate(-164.000000, -126.000000) translate(62.000000, -30.000000)">',
+                                                    '<g id="Group-3" transform="translate(156.000000, 188.000000)">',
+                                                        '<rect id="Rectangle-10" fill="#E4E3EC" x="0" y="-1.13686838e-13" width="48" height="24"></rect>',
+                                                        '<path d="M36,15 L12,15" id="line-1" stroke="#001AFF" stroke-width="2" stroke-linecap="square"></path>',
+                                                        '<path d="M36,9 L12,9" id="line-2" stroke="#001AFF" stroke-width="2" stroke-linecap="square"></path>',
+                                                    '</g>',
+                                                '</g>',
+                                            '</g>',
+                                        '</g>',
                                     "</svg>",
                                 "</div>",
                                 gradientFix,
@@ -411,7 +419,6 @@
             }, dragStart, dragStop);
 
             draggable(dragger, function (dragX, dragY, e) {
-
                 // shift+drag should snap the movement to either the x or y axis.
                 if (!e.shiftKey) {
                     shiftMovementDirection = null;
@@ -757,6 +764,9 @@
             var flatColor = tinycolor.fromRatio({ h: currentHue, s: 1, v: 1 });
             dragger.css("background-color", flatColor.toHexString());
 
+            // Update hue slideHelper color
+            slideHelper.find("path").css("stroke", flatColor.toHexString());
+
             // Get a format that alpha will be included in (hex and names ignore alpha)
             var format = currentPreferredFormat;
             if (currentAlpha < 1 && !(currentAlpha === 0 && format === "name")) {
@@ -842,6 +852,7 @@
                 // Where to show the little circle in that displays your current selected color
                 var dragX = s * dragWidth;
                 var dragY = dragHeight - (v * dragHeight);
+
                 dragX = Math.max(
                     0,
                     Math.min(dragWidth - dragHelperHeight, dragX - dragHelperHeight)
@@ -850,6 +861,7 @@
                     0,
                     Math.min(dragHeight - dragHelperHeight, dragY - dragHelperHeight)
                 );
+
                 dragHelper.css({
                     "top": dragY + "px",
                     "left": dragX + "px"
