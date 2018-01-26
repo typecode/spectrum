@@ -113,15 +113,11 @@
                             "<div class='sp-hue'>",
                                 "<div class='sp-slider'>",
                                     "<svg version='1.1'>",
-                                        '<g id="Updated-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-292.000000, -2575.000000)">',
-                                            '<g id="Color-Picker-Standalone" transform="translate(96.000000, 2551.000000)">',
-                                                '<g id="Group" transform="translate(164.000000, 126.000000) rotate(-90.000000) translate(-164.000000, -126.000000) translate(62.000000, -30.000000)">',
-                                                    '<g id="Group-3" transform="translate(156.000000, 188.000000)">',
-                                                        '<rect id="Rectangle-10" fill="#E4E3EC" x="0" y="-1.13686838e-13" width="48" height="24"></rect>',
-                                                        '<path d="M36,15 L12,15" id="line-1" stroke="#001AFF" stroke-width="2" stroke-linecap="square"></path>',
-                                                        '<path d="M36,9 L12,9" id="line-2" stroke="#001AFF" stroke-width="2" stroke-linecap="square"></path>',
-                                                    '</g>',
-                                                '</g>',
+                                        '<g id="Updated-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-324.000000, -2575.000000)">',
+                                            '<g id="Fixed-Color-Slider" transform="translate(324.000000, 2575.000000)">',
+                                                '<rect id="Rectangle-8" fill="#E4E3EC" x="0" y="0" width="24" height="48"></rect>',
+                                                '<path d="M9,12 L9,36" id="Line-24" stroke="#001AFF" stroke-width="2" stroke-linecap="square"></path>',
+                                                '<path d="M15,12 L15,36" id="Line-24-Copy" stroke="#001AFF" stroke-width="2" stroke-linecap="square"></path>',
                                             '</g>',
                                         '</g>',
                                     "</svg>",
@@ -854,12 +850,12 @@
                 var dragY = dragHeight - (v * dragHeight);
 
                 dragX = Math.max(
-                    0,
-                    Math.min(dragWidth - dragHelperHeight, dragX - dragHelperHeight)
+                    -8,
+                    Math.min(dragWidth - dragHelperHeight, dragX - dragHelperHeight) + 4
                 );
                 dragY = Math.max(
-                    0,
-                    Math.min(dragHeight - dragHelperHeight, dragY - dragHelperHeight)
+                    -8,
+                    Math.min(dragHeight - dragHelperHeight, dragY - dragHelperHeight) + 4
                 );
 
                 dragHelper.css({
