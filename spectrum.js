@@ -323,7 +323,7 @@
                 e.stopPropagation();
 
                 if (!$(e.target).is("input")) {
-                    e.preventDefault();
+                    // e.preventDefault();
                 }
             });
 
