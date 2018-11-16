@@ -758,6 +758,7 @@
             dragger.css("background-color", flatColor.toHexString());
 
             // Update hue slideHelper color
+            slideHelper.css("background-color", flatColor.toHexString());
             slideHelper.find("path").css("stroke", flatColor.toHexString());
 
             // Get a format that alpha will be included in (hex and names ignore alpha)
